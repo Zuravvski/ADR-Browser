@@ -3,6 +3,7 @@ import { AdrStatus } from './adr-status.model';
 import { Adr } from '../shared/adr.model';
 import { AdrService } from '../shared/adr.service';
 import { ActivatedRoute } from '@angular/router';
+import { AdrParser } from '../utils/adr-parser.service';
 
 class ActiveStatus {
   constructor(public value: AdrStatus, public active: boolean) { }
@@ -17,10 +18,13 @@ export class AdrComponent implements OnInit {
   statuses: ActiveStatus[] = [];
   adr: Adr;
 
-  constructor(private adrService: AdrService, private route: ActivatedRoute) {}
+  constructor(private adrService: AdrService, 
+              private adrParser: AdrParser,          
+              private route: ActivatedRoute) {}
 
   ngOnInit() {
-    this.statuses = this.adrService.getKnownAdrStatuses().map((status: AdrStatus) => new ActiveStatus(status, false));
+    this.statuses = this.adrParser.getKnownAdrStatuses().map((status: AdrStatus) => new ActiveStatus(status, false));
+    
     this.adrService.adrSelected.subscribe(adr => {
       this.adr = adr;
 
