@@ -1,0 +1,16 @@
+<div class="top-menu">
+    <div class="row d-flex justify-content-center">
+        <h1>Architecture Decision Record Browser</h1>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-4">
+            <div class="form-inline">
+                <select class="form-control" (change)="onChange($event.target.value)">
+                    <option *ngFor="let adr of adrs">
+                       {{adr.title}}
+                    </option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>

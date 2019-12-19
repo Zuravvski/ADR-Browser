@@ -1,0 +1,24 @@
+<div class="content" *ngIf="adr; else spinner">
+    <div class="row d-flex justify-content-center">
+        <h1 style="text-align: center;">{{adr.title}}</h1>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <p>{{adr.creationDate | date: 'EEEE, MMMM d y'}}</p>
+    </div>
+    <div class="row d-flex justify-content-center status-indicators">
+        <span class="status-tile" *ngFor="let status of statuses" [ngClass]="[status.value.style, status.active ? '' : 'inactive']">
+            <img [src]="status.value.imagePath">
+            {{status.value.name}}
+        </span>
+    </div>
+    <div class="row">
+        <markdown [data]="adr.content"></markdown>
+    </div>
+</div>
+<ng-template #spinner>
+    <div class="row h-100 d-flex flex-column justify-content-center align-items-center">
+        <div class="spinner-border" role="status" style="width: 10rem; height: 10rem; margin-top: 15rem; color: #5bc0de;">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+</ng-template>
