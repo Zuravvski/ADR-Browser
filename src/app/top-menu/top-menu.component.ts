@@ -45,8 +45,8 @@ export class TopMenuComponent implements OnInit, OnDestroy {
     }
   }
 
-  compareFn(c1: any, c2: any): boolean {
-    return c1 && c2 ? c1.title === c2.title : c1 === c2; 
+  compareAdrs(adr: any, otherAdr: any): boolean {
+    return adr && otherAdr ? adr.title === otherAdr.title : adr === otherAdr; 
   }
 
   ngOnDestroy() {

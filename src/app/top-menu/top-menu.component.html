@@ -9,7 +9,7 @@
                     <select class="form-control" 
                             formControlName="adrSelection"
                             (change)="onChange()"
-                            [compareWith]="compareFn"
+                            [compareWith]="compareAdrs"
                             [value]="null">
                         <option [ngValue]="null"
                                 routerLink="/">[Software System] Summary</option>
