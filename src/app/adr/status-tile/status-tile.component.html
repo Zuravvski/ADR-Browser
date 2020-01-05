@@ -1,0 +1,6 @@
+<span [ngClass]="[status.style, 
+                  active ? '' : 'inactive'
+                  small ? 'status-tile-small' : 'status-tile']">
+        <img [src]="status.imagePath">
+        {{status.name}}
+</span>

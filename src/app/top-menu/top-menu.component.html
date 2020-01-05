@@ -9,8 +9,9 @@
                     <select class="form-control" 
                             formControlName="adrSelection"
                             (change)="onChange()"
-                            [compareWith]="compareFn">
-                        <option [ngValue]="all"
+                            [compareWith]="compareFn"
+                            [value]="null">
+                        <option [ngValue]="null"
                                 routerLink="/">[Software System] Summary</option>
                         <option *ngFor="let adr of adrs" 
                                 [ngValue]="adr">

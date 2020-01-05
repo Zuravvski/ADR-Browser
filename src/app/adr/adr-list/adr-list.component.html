@@ -1,17 +1,15 @@
 <div class="section">
-    <h1 style="text-align: center; margin: 3rem 0;">
-        Summary
-    </h1>
+    <h1 style="text-align: center; margin: 3rem 0;">Summary</h1>
     <div class="container">
         <table class="table table-striped">
             <tbody>
                 <tr *ngFor="let adr of adrs; let i = index">
-                    <td>{{i+1}}</td>
-                    <td>
+                    <td class="align-middle">{{i+1}}</td>
+                    <td class="align-middle">
                         <a [routerLink]="[i]">{{adr.title | slice:2}}</a>
                     </td>
-                    <td>{{adr.creationDate | date: 'EEEE, MMMM d y'}}</td>
-                    <td>
+                    <td class="align-middle">{{adr.creationDate | date: 'EEEE, MMMM d y'}}</td>
+                    <td class="align-middle">
                         <span class="status-tile accepted">
                             <img [src]="adr.status.imagePath">
                             {{adr.status.name}}

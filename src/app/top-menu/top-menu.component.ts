@@ -26,12 +26,11 @@ export class TopMenuComponent implements OnInit, OnDestroy {
 
     this.adrService.browse().subscribe(adrs => {
       this.adrs = adrs
-      this.selectionForm.controls['adrSelection'].setValue(this.adrs[0]);
     });
 
     this.activeSubscriptions.push(
       this.adrService.selectedAdr.subscribe(adr => {
-        this.selectionForm.controls['adrSelection'].setValue(adr);
+          this.selectionForm.controls['adrSelection'].setValue(adr);
       })
     );
   }

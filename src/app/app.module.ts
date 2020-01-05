@@ -9,13 +9,15 @@ import { AdrComponent } from './adr/adr.component';
 import { AdrListComponent } from './adr/adr-list/adr-list.component';
 import { TopMenuComponent } from './top-menu/top-menu.component';
 import { AppRoutingModule } from './app-routing.module';
+import { StatusTileComponent } from './adr/status-tile/status-tile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AdrComponent,
     AdrListComponent,
-    TopMenuComponent
+    TopMenuComponent,
+    StatusTileComponent
   ],
   imports: [
     BrowserModule,
