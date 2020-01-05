@@ -10,10 +10,7 @@
                     </td>
                     <td class="align-middle">{{adr.creationDate | date: 'EEEE, MMMM d y'}}</td>
                     <td class="align-middle">
-                        <span class="status-tile accepted">
-                            <img [src]="adr.status.imagePath">
-                            {{adr.status.name}}
-                        </span>
+                        <app-status-tile [status]="adr.status" [small]="true"></app-status-tile>
                     </td>
                 </tr>
             </tbody>

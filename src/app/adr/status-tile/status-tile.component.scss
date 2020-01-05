@@ -14,16 +14,17 @@
         filter: invert(1);
     }
 
-    &-small {
+    &--small {
         line-height: 1;
         padding: .3rem 0;
         border-radius: .2rem;
-        justify-content: space-evenly;
+        justify-content: center;
 
         img {
-            height: 15px; 
-            width: 15px;
+            height: 18px; 
+            width: 18px;
             filter: invert(1);
+            margin-right: .2rem;
         }
     }
 }

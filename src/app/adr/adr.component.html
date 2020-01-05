@@ -6,10 +6,10 @@
         <p>{{adr.creationDate | date: 'EEEE, MMMM d y'}}</p>
     </div>
     <div class="row d-flex justify-content-center status-indicators">
-        <span class="status-tile" *ngFor="let status of statuses" [ngClass]="[status.value.style, status.active ? '' : 'inactive']">
-            <img [src]="status.value.imagePath">
-            {{status.value.name}}
-        </span>
+        <app-status-tile *ngFor="let status of statuses" 
+                         [status]="status.value" 
+                         [active]="status.active">
+        </app-status-tile>
     </div>
     <div class="row">
         <markdown [data]="adr.content"></markdown>

@@ -1,52 +1,16 @@
 .content {
     padding: 2rem 10rem;
 }
+
 .status-indicators {
     margin-bottom: 3rem;
-}
-
-.status-tile {
-    text-align: center;
-    display: flex;
-    align-items: center;
-    color: #fff;
-    white-space: nowrap;
-    line-height: 200%;
-    padding: .05rem .8rem;
-    border-radius: .45rem;
-
-    img {
-        height: 28px; 
-        width: 28px;
-        filter: invert(1);
-    }
-
-    &:not(:last-child) {
-        margin-right: .25rem;
-    }
-}
-
-.accepted {
-    background-color: #5cb85c;
-}
-
-.proposed {
-    background-color: #5bc0de;
-}
-
-.warning {
-    background-color: #f0ad4e;
-}
-
-.rejected {
-    background-color: #d9534f;
-}
-
-.inactive {
-    opacity: .2;
 }
 
 .row {
     margin-left: 0;
     margin-right: 0;
+}
+
+app-status-tile {
+    margin-right: .25rem;
 }
