@@ -1,1 +1,24 @@
-<p>adr-list works!</p>
+<div class="section">
+    <h1 style="text-align: center; margin: 3rem 0;">
+        Summary
+    </h1>
+    <div class="container">
+        <table class="table table-striped">
+            <tbody>
+                <tr *ngFor="let adr of adrs; let i = index">
+                    <td>{{i+1}}</td>
+                    <td>
+                        <a [routerLink]="[i]">{{adr.title | slice:2}}</a>
+                    </td>
+                    <td>{{adr.creationDate | date: 'EEEE, MMMM d y'}}</td>
+                    <td>
+                        <span class="status-tile accepted">
+                            <img [src]="adr.status.imagePath">
+                            {{adr.status.name}}
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

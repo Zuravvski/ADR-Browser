@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { MarkdownModule } from 'ngx-markdown';
 
 import { AppComponent } from './app.component';
@@ -20,7 +21,8 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    MarkdownModule.forRoot({ loader: HttpClient })
+    MarkdownModule.forRoot({ loader: HttpClient }),
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,25 @@
+.status-tile {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    white-space: nowrap;
+    line-height: 1;
+    padding: .3rem .5rem;
+    border-radius: .2rem;
+    justify-content: space-evenly;
+
+    img {
+        height: 15px; 
+        width: 15px;
+        filter: invert(1);
+    }
+
+    &:not(:last-child) {
+        margin-right: .25rem;
+    }
+}
+
+.accepted {
+    background-color: #5cb85c;
+}

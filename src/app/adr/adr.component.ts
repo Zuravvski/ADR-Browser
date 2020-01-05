@@ -24,16 +24,20 @@ export class AdrComponent implements OnInit {
 
   ngOnInit() {
     this.statuses = this.adrParser.getKnownAdrStatuses().map((status: AdrStatus) => new ActiveStatus(status, false));
-    
-    this.adrService.adrSelected.subscribe(adr => {
-      this.adr = adr;
 
-      const statusIndex = this.statuses.findIndex(x => x.value.name === adr.status.name);
+    this.route.params.subscribe(params => {
+      this.adrService.browse().subscribe(adrs => {
+        this.adr = adrs[+params.id];
 
-      if(statusIndex !== -1) {
-        this.statuses.forEach(x => x.active = false);
-        this.statuses[statusIndex].active = true;
-      }
+        const statusIndex = this.statuses.findIndex(x => x.value.name === this.adr.status.name);
+
+        if(statusIndex !== -1) {
+          this.statuses.forEach(x => x.active = false);
+          this.statuses[statusIndex].active = true;
+        }
+
+        this.adrService.selectedAdr.next(this.adr);
+      });
     });
   }
 }
